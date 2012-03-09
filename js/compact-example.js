@@ -45,14 +45,10 @@ if(rs.isMaster().setName){
         // someone else is primary, so we are ready to proceed with a compaction
         print(" ");
         print("Compacting...");
-        print("- wengine_queue");
-        printjson( db.runCommand({compact:"wengine_queue",dev:true}) );
-        print("- wengine_log");
-        printjson( db.runCommand({compact:"wengine_log",dev:true}) );
-        print("- wengine_workers");
-        printjson( db.runCommand({compact:"wengine_workers",dev:true}) );
-        print("- wengine_workers_log");
-        printjson( db.runCommand({compact:"wengine_workers_log",dev:true}) );
+        print("- collection1");
+        printjson( db.runCommand({compact:"collection1",dev:true}) );
+        print("- collection2");
+        printjson( db.runCommand({compact:"collection2",dev:true}) );        
         print(" ");
     
     } catch(e) { 
